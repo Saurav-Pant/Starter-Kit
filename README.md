@@ -1,8 +1,5 @@
-Sure, here is the updated README with the provided information, including a detailed explanation for setting up the database and scripts in `package.json`.
-
 ---
-
-# Starker Kit with TurboRepo, Cloudflare Pages, Tailwind CSS, and Drizzle ORM 
+# Starker Kit with TurboRepo, Cloudflare Pages, Tailwind CSS, ShadCN UI and Drizzle ORM 
 
 This is a monorepo setup with [Turborepo](https://turborepo.dev/) and [Cloudflare Pages](https://pages.cloudflare.com/) for deploying NextJS applications. It also includes a shared `tailwindcss` configuration and a shared `eslint` configuration.
 
