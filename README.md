@@ -62,7 +62,9 @@ Shared `tailwindcss` and `eslint` configurations.
 `tsconfig.json`s which can be used by extending them throughout the monorepo.
 
 ### packages/ui
+
 Shared UI components with ShadCN implementation.
+
 ---
 
 
