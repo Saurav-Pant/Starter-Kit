@@ -1,0 +1,224 @@
+{
+  "id": "00000000-0000-0000-0000-000000000000",
+  "prevId": "",
+  "version": "6",
+  "dialect": "sqlite",
+  "tables": {
+    "tasks": {
+      "name": "tasks",
+      "columns": {
+        "id": {
+          "autoincrement": false,
+          "name": "id",
+          "type": "integer",
+          "primaryKey": true,
+          "notNull": false
+        },
+        "title": {
+          "autoincrement": false,
+          "name": "title",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "description": {
+          "autoincrement": false,
+          "name": "description",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "due_date": {
+          "autoincrement": false,
+          "name": "due_date",
+          "type": "numeric",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "priority": {
+          "default": "'Medium'",
+          "autoincrement": false,
+          "name": "priority",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "category_id": {
+          "autoincrement": false,
+          "name": "category_id",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "completed": {
+          "default": 0,
+          "autoincrement": false,
+          "name": "completed",
+          "type": "numeric",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "created_at": {
+          "default": "(CURRENT_TIMESTAMP)",
+          "autoincrement": false,
+          "name": "created_at",
+          "type": "numeric",
+          "primaryKey": false,
+          "notNull": false
+        }
+      },
+      "compositePrimaryKeys": {},
+      "indexes": {},
+      "foreignKeys": {
+        "tasks_category_id_categories_id_fk": {
+          "name": "tasks_category_id_categories_id_fk",
+          "tableFrom": "tasks",
+          "tableTo": "categories",
+          "columnsFrom": [
+            "category_id"
+          ],
+          "columnsTo": [
+            "id"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        }
+      },
+      "uniqueConstraints": {}
+    },
+    "categories": {
+      "name": "categories",
+      "columns": {
+        "id": {
+          "autoincrement": false,
+          "name": "id",
+          "type": "integer",
+          "primaryKey": true,
+          "notNull": false
+        },
+        "name": {
+          "autoincrement": false,
+          "name": "name",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "compositePrimaryKeys": {},
+      "indexes": {},
+      "foreignKeys": {},
+      "uniqueConstraints": {}
+    },
+    "task_categories": {
+      "name": "task_categories",
+      "columns": {
+        "category_id": {
+          "autoincrement": true,
+          "name": "category_id",
+          "type": "integer",
+          "primaryKey": true,
+          "notNull": false
+        },
+        "category_name": {
+          "autoincrement": false,
+          "name": "category_name",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "compositePrimaryKeys": {},
+      "indexes": {},
+      "foreignKeys": {},
+      "uniqueConstraints": {}
+    },
+    "task_list": {
+      "name": "task_list",
+      "columns": {
+        "task_id": {
+          "autoincrement": true,
+          "name": "task_id",
+          "type": "integer",
+          "primaryKey": true,
+          "notNull": false
+        },
+        "task_title": {
+          "autoincrement": false,
+          "name": "task_title",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "task_description": {
+          "autoincrement": false,
+          "name": "task_description",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "due_date": {
+          "autoincrement": false,
+          "name": "due_date",
+          "type": "numeric",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "task_priority": {
+          "default": "'Medium'",
+          "autoincrement": false,
+          "name": "task_priority",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "task_category_id": {
+          "autoincrement": false,
+          "name": "task_category_id",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "is_completed": {
+          "default": 0,
+          "autoincrement": false,
+          "name": "is_completed",
+          "type": "numeric",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "created_on": {
+          "default": "(CURRENT_TIMESTAMP)",
+          "autoincrement": false,
+          "name": "created_on",
+          "type": "numeric",
+          "primaryKey": false,
+          "notNull": false
+        }
+      },
+      "compositePrimaryKeys": {},
+      "indexes": {},
+      "foreignKeys": {
+        "task_list_task_category_id_task_categories_category_id_fk": {
+          "name": "task_list_task_category_id_task_categories_category_id_fk",
+          "tableFrom": "task_list",
+          "tableTo": "task_categories",
+          "columnsFrom": [
+            "task_category_id"
+          ],
+          "columnsTo": [
+            "category_id"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        }
+      },
+      "uniqueConstraints": {}
+    }
+  },
+  "enums": {},
+  "_meta": {
+    "schemas": {},
+    "tables": {},
+    "columns": {}
+  }
+}
